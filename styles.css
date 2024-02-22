@@ -1,0 +1,109 @@
+/* Estilos generales */
+body{
+    background: hsl(235, 18%, 26%);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+main{
+    font-family: "Roboto", sans-serif;
+    color: hsl(234, 29%, 20%);
+    font-weight: 400;
+    max-width: 800px; /* Máximo ancho del contenido */
+    width: 90%; /* Ancho del contenido */
+    margin: 0 auto; /* Centrar el contenido */
+    display: flex;
+    flex-direction: column; /* Cambia a columnas en pantallas más pequeñas */
+}
+
+.content {
+    background: hsl(0, 0%, 100%);
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row; /* Cambia a filas en pantallas más pequeñas */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+}
+
+.text {
+    flex: 1; /* Para que ocupe el espacio restante */
+    padding-right: 20px; /* Espacio entre el texto y la imagen */
+    margin-bottom: 20px; /* Espacio entre el texto y el botón */
+}
+
+.image {
+    display: flex;
+    justify-content: center; /* Para centrar la imagen */
+    align-items: center; /* Para centrar verticalmente la imagen */
+    flex: 1; /* Para que ocupe el espacio restante */
+}
+
+.custom-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 10px;
+}
+
+.custom-list li::before {
+    content: '\2713';
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid hsl(4, 100%, 67%);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    background: hsl(4, 100%, 67%);
+    color: hsl(0, 0%, 100%);
+}
+
+/* Opcional: Cambiar el color del círculo en hover */
+.custom-list li:hover::before {
+    border-color: blue;
+}
+
+.view input[type="text"] {
+    width: calc(100% - 20px); /* Ancho igual al 100% menos el padding-right */
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.view button {
+    padding: 10px 20px;
+    background-color: hsl(234, 29%, 20%); /* Restaura el color original */
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 320px) {
+    main {
+        width: 100%;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .text,
+    .image {
+        padding: 0;
+        flex: none;
+        width: 100%;
+    }
+}
